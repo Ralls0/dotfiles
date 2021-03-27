@@ -18,7 +18,7 @@ parse_git_branch() {
 }
  
 ### PROMPT
-PS1="\342\224\214($(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]👑⚡\h⚡👑'; else echo '\[\033[01;36m\]\u 🍩 '; fi)\$(date +%k:%M:%S)\[\033[1;37m\])\342\224\200(\w)\342\224\200(\[\033[1;33m\]\$(ls -1 | wc -l | sed 's: ::g') files\[\033[1;37m\])\342\224\200(\[\033[1;35m\]\$(ls -1a | grep -e '^\..*'| wc -l | sed 's: ::g') dot files\[\033[1;37m\])\n\342\224\224\$(parse_git_branch)\342\206\222🍩"
+PS1="\342\224\214($(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]👑⚡\h⚡👑'; else echo '\[\033[01;36m\]\u ⚡ '; fi)\$(date +%k:%M:%S)\[\033[1;37m\])\342\224\200(\w)\342\224\200(\[\033[1;33m\]\$(ls -1 | wc -l | sed 's: ::g') files\[\033[1;37m\])\342\224\200(\[\033[1;35m\]\$(ls -1a | grep -e '^\..*'| wc -l | sed 's: ::g') dot files\[\033[1;37m\])\n\342\224\224\$(parse_git_branch)\342\206\222 ⚡"
 
 ### PATH
 if [ -d "$HOME/.bin" ] ;
@@ -86,8 +86,8 @@ alias free='free -m'                      # show sizes in MB
 # the terminal rickroll
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 
-alias ls="ls -FG"
-alias ll="ls -laFG"
+alias ls="ls -FG --color=auto"
+alias ll="ls -laFG --color=auto"
 alias ..="cd .."
 alias ttyc="tty-clock -s -x -c -C 4"
 alias bpy="bpytop"
