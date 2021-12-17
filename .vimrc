@@ -15,6 +15,12 @@ set ruler
 set hidden
 set number
 
+" Tab
+set smartindent
+set tabstop=2
+set expandtab
+set shiftwidth=2
+
 let &colorcolumn="80"
 
 " Mouse enable
