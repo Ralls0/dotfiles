@@ -18,8 +18,21 @@ set number
 " Tab
 set smartindent
 set tabstop=2
+set softtabstop=2
 set expandtab
 set shiftwidth=2
+
+" display indentation guides
+set list listchars=tab:❘·,trail:·,extends:»,precedes:«,nbsp:×
+
+" convert spaces to tabs when reading file
+autocmd! bufreadpost * set noexpandtab | retab! 2
+
+" convert tabs to spaces before writing file
+autocmd! bufwritepre * set expandtab | retab! 2
+
+" convert spaces to tabs after writing file (to show guides again)
+autocmd! bufwritepost * set noexpandtab | retab! 2
 
 let &colorcolumn="80"
 
